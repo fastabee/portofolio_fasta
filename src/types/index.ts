@@ -47,6 +47,18 @@ export interface Experience {
   techStack: string[];
 }
 
+export interface Education {
+  id: string;
+  major: string;
+  institution: string;
+  period: string;
+  location?: string;
+  description?: {
+    id: string;
+    en: string;
+  };
+}
+
 export interface SkillItem {
   name: string;
   level: number; // 1-100
@@ -118,6 +130,8 @@ export interface PersonalInfo {
     instagram?: string;
     youtube?: string;
     email: string;
+    phone?: string;
+    whatsapp?: string;
     resume: string;
   };
 }

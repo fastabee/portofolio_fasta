@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cpu, Code2, Activity, GitBranch, Copy, Check, MapPin, Coffee, Layers } from 'lucide-react';
+import { Cpu, Code2, Activity, GitBranch, Copy, Check, MapPin, GraduationCap, Layers } from 'lucide-react';
 import { personalData } from '../data/portfolioData';
 import type { Language } from '../types';
 
@@ -9,58 +9,58 @@ interface AboutProps {
 
 export const About: React.FC<AboutProps> = ({ lang }) => {
   const [copiedCode, setCopiedCode] = useState(false);
-  const [activeTab, setActiveTab] = useState<'go' | 'ts'>('go');
+  const [activeTab, setActiveTab] = useState<'ts' | 'py'>('ts');
 
-  const goCode = `package main
+  const tsCode = `import { SoftwareEngineer, Education, Competency } from '@fasta/core';
 
-import (
-    "context"
-    "fmt"
-    "time"
-)
-
-type SoftwareEngineer struct {
-    Name        string
-    Focus       []string
-    Values      []string
-    Status      string
-}
-
-func NewEngineer() *SoftwareEngineer {
-    return &SoftwareEngineer{
-        Name:   "${personalData.name}",
-        Focus:  []string{"Distributed Systems", "Cloud-Native", "Microservices"},
-        Values: []string{"High Uptime", "Clean Architecture", "Zero Bug Tolerance"},
-        Status: "Open for High-Impact Projects",
-    }
-}
-
-func (e *SoftwareEngineer) BuildScalableSystem(ctx context.Context) error {
-    // Ensuring high concurrency and sub-10ms latency
-    return nil
-}`;
-
-  const tsCode = `import { Engineer, Problem, Solution } from '@rian/core';
-
-export const rianPratama: Engineer = {
+export const fastaBiqulHoirot: SoftwareEngineer = {
   name: '${personalData.name}',
-  yearsExperience: 5,
-  coreStack: ['Go', 'TypeScript', 'Docker', 'PostgreSQL', 'React 19'],
+  education: 'D4 Teknik Informatika - Politeknik Negeri Jember',
+  certification: 'BNSP Certified Web Developer (2024)',
   
-  designPhilosophy: {
-    scalability: 'Graceful degradation under heavy peak traffic',
-    codeQuality: '100% type-safe with high integration test coverage',
-    devExperience: 'Automated CI/CD pipelines & reproducible environments',
-  },
+  coreExpertise: [
+    'Aplikasi Web & Mobile End-to-End',
+    'Manajemen & Keamanan Basis Data Server',
+    'Pengolahan Data Skala Besar & Integrasi AI/ML',
+    'Infrastruktur Server & High Availability (99.9%)'
+  ],
 
-  async deliverValue(challenge: Problem): Promise<Solution> {
-    const architecture = await this.designRobustSystem(challenge);
-    return architecture.deployWithZeroDowntime();
+  recentProjects: [
+    'Belankon Kurir (Logistik & Pelacakan Real-Time)',
+    'ISI-Piringku (Platform Pemantauan Gizi Harian)',
+    'JDIH Kabupaten Jember (Pusat Arsip Hukum Resmi)',
+    'Ekosistem Aplikasi Terintegrasi (88 Group)'
+  ],
+
+  solveProblem(requirement: BusinessRequirement): ScalableSolution {
+    const system = this.designEndToEndArchitecture(requirement);
+    return system.deployWithHighAvailability();
   }
 };`;
 
+  const pyCode = `# Fasta Biqul Hoirot - Software Engineer & Data Processing
+from dataclasses import dataclass
+from typing import List
+
+@dataclass
+class SoftwareEngineer:
+    name: str = "${personalData.name}"
+    degree: str = "D4 Teknik Informatika, Politeknik Negeri Jember"
+    focus_areas: List[str] = (
+        "Web & Mobile Applications",
+        "Large-Scale Data Processing",
+        "Machine Learning Model Integration",
+        "Server Maintenance & Troubleshooting"
+    )
+    status: str = "Open for Software Engineer Opportunities"
+
+    def optimize_system(self, server_load: float) -> str:
+        # Ensuring database integrity and high server availability
+        return "System running optimal with 99.9% uptime SLA"
+`;
+
   const copyToClipboard = () => {
-    const code = activeTab === 'go' ? goCode : tsCode;
+    const code = activeTab === 'ts' ? tsCode : pyCode;
     navigator.clipboard.writeText(code);
     setCopiedCode(true);
     setTimeout(() => setCopiedCode(false), 2000);
@@ -84,12 +84,12 @@ export const rianPratama: Engineer = {
             <span>{lang === 'id' ? '// 01. TENTANG SAYA' : '// 01. ABOUT ME'}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            {lang === 'id' ? 'Engineering Mindset & Filosofi' : 'Engineering Mindset & Philosophy'}
+            {lang === 'id' ? 'Profil & Filosofi Rekayasa' : 'Profile & Engineering Mindset'}
           </h2>
           <p className="mt-3 text-slate-400 max-w-2xl text-base">
             {lang === 'id' 
-              ? 'Bukan sekadar menulis sintaks, tetapi merancang solusi komputasi yang tangguh, terukur, dan mempermudah pertumbuhan bisnis.'
-              : 'Not just writing syntax, but architecting resilient, measurable computing solutions that empower businesses to scale.'}
+              ? 'Lulusan D4 Teknik Informatika dengan dedikasi tinggi dalam merancang arsitektur sistem end-to-end, pemeliharaan server, dan pengolahan data terukur.'
+              : 'Informatics Engineering graduate dedicated to architecting end-to-end systems, server operations, and scalable data processing.'}
           </p>
         </div>
 
@@ -100,31 +100,29 @@ export const rianPratama: Engineer = {
           <div className="lg:col-span-6 space-y-6">
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-sm">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <span>{lang === 'id' ? 'Pendekatan Rekayasa Perangkat Lunak' : 'Software Engineering Approach'}</span>
+                <span>{lang === 'id' ? 'Latar Belakang & Pendekatan Teknis' : 'Background & Technical Approach'}</span>
               </h3>
               
               <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
                 <p>
-                  {lang === 'id' 
-                    ? 'Saya berfokus pada arsitektur perangkat lunak modern: memecah sistem monolitik yang rumit menjadi layanan modular (microservices) yang mudah dirawat, andal, dan siap menangani jutaan permintaan per detik.'
-                    : 'I specialize in modern software architecture: transforming monoliths into decoupled, resilient microservices prepared to handle millions of requests with ease.'}
+                  {personalData.bio[lang]}
                 </p>
-                <p>
+                <p className="text-slate-400 text-sm">
                   {lang === 'id'
-                    ? 'Dengan latar belakang mendalam pada ekosistem Golang, TypeScript, Node.js, dan Cloud Native (Docker, Kubernetes, AWS), saya menjembatani kecepatan iterasi frontend dengan stabilitas kokoh backend.'
-                    : 'With deep experience across Go, TypeScript, Node.js, and Cloud Native tools (Docker, Kubernetes, AWS), I bridge rapid frontend iteration with rock-solid backend stability.'}
+                    ? 'Memiliki pengalaman langsung baik di lingkungan korporasi maupun freelance dalam mengembangkan aplikasi Belankon Kurir, platform kesehatan ISI-Piringku, web portal resmi JDIH Kabupaten Jember, hingga ekosistem sistem informasi terintegrasi lintas divisi di 88 Group.'
+                    : 'Proven hands-on experience in corporate and freelance settings delivering Belankon Kurir, ISI-Piringku health tracker, the official JDIH Jember legal portal, and integrated enterprise systems at 88 Group.'}
                 </p>
               </div>
 
               {/* Quick Info Badges */}
               <div className="mt-6 pt-6 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs text-slate-300">
                 <div className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-950/60 border border-slate-800">
-                  <MapPin className="w-4 h-4 text-cyan-400" />
-                  <span>{personalData.location.split('(')[0]}</span>
+                  <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span className="truncate">Jawa Timur, Indonesia</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-950/60 border border-slate-800">
-                  <Coffee className="w-4 h-4 text-amber-400" />
-                  <span>5+ Years in Production</span>
+                  <GraduationCap className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="truncate">D4 Teknik Informatika</span>
                 </div>
               </div>
             </div>
@@ -140,7 +138,7 @@ export const rianPratama: Engineer = {
                   <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                   <span className="ml-2 text-xs font-mono text-slate-400">
-                    {activeTab === 'go' ? 'engineer.go' : 'engineer.ts'}
+                    {activeTab === 'ts' ? 'fasta_engineer.ts' : 'fasta_pipeline.py'}
                   </span>
                 </div>
 
@@ -148,20 +146,20 @@ export const rianPratama: Engineer = {
                   {/* Language tabs */}
                   <div className="flex rounded-md bg-slate-950 p-0.5 border border-slate-800 text-xs font-mono">
                     <button
-                      onClick={() => setActiveTab('go')}
-                      className={`px-2.5 py-1 rounded transition-colors ${
-                        activeTab === 'go' ? 'bg-cyan-500/20 text-cyan-300 font-semibold' : 'text-slate-400 hover:text-white'
-                      }`}
-                    >
-                      Go
-                    </button>
-                    <button
                       onClick={() => setActiveTab('ts')}
                       className={`px-2.5 py-1 rounded transition-colors ${
                         activeTab === 'ts' ? 'bg-cyan-500/20 text-cyan-300 font-semibold' : 'text-slate-400 hover:text-white'
                       }`}
                     >
                       TypeScript
+                    </button>
+                    <button
+                      onClick={() => setActiveTab('py')}
+                      className={`px-2.5 py-1 rounded transition-colors ${
+                        activeTab === 'py' ? 'bg-cyan-500/20 text-cyan-300 font-semibold' : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      Python
                     </button>
                   </div>
 
@@ -179,7 +177,7 @@ export const rianPratama: Engineer = {
               {/* Code Editor Body */}
               <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-slate-300">
                 <pre className="text-slate-200">
-                  <code>{activeTab === 'go' ? goCode : tsCode}</code>
+                  <code>{activeTab === 'ts' ? tsCode : pyCode}</code>
                 </pre>
               </div>
 
@@ -189,7 +187,7 @@ export const rianPratama: Engineer = {
                   <span className="text-cyan-400">NORMAL</span>
                   <span>UTF-8</span>
                 </div>
-                <span>LF · {activeTab === 'go' ? 'Go 1.23' : 'TS 5.7'}</span>
+                <span>LF · {activeTab === 'ts' ? 'TypeScript 5.7' : 'Python 3.12'}</span>
               </div>
             </div>
           </div>

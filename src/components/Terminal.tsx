@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Terminal as TerminalIcon, X } from 'lucide-react';
-import { personalData, projectsData, skillCategoriesData, experiencesData } from '../data/portfolioData';
+import { personalData, projectsData, skillCategoriesData, experiencesData, educationData, certificationsData } from '../data/portfolioData';
 import type { Language } from '../types';
 
 interface TerminalProps {
@@ -28,7 +28,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
       output: (
         <div className="space-y-1 text-slate-300">
           <p className="text-cyan-400 font-bold">
-            ⚡ Welcome to Rian Pratama's Interactive Developer CLI [v2.4.0]
+            ⚡ Welcome to {personalData.name}'s Interactive CLI [v2.4.0]
           </p>
           <p className="text-slate-400 text-xs">
             Type <span className="text-emerald-400 font-semibold font-mono">help</span> to view available commands, or click the quick action chips below.
@@ -65,13 +65,14 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
           <div className="space-y-2 text-xs">
             <p className="text-cyan-300 font-semibold">// AVAILABLE COMMANDS:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300">
-              <div><span className="text-emerald-400 font-mono font-bold">about</span> - Software engineer bio & mindset</div>
-              <div><span className="text-emerald-400 font-mono font-bold">skills</span> - Technical stack & proficiencies</div>
-              <div><span className="text-emerald-400 font-mono font-bold">projects</span> - Production projects & architectures</div>
-              <div><span className="text-emerald-400 font-mono font-bold">experience</span> - Career history & leadership</div>
-              <div><span className="text-emerald-400 font-mono font-bold">contact</span> - Reach out via email & socials</div>
-              <div><span className="text-emerald-400 font-mono font-bold">cat resume.txt</span> - Quick summary of resume</div>
-              <div><span className="text-emerald-400 font-mono font-bold">sudo hire</span> - Direct offer pipeline 😉</div>
+              <div><span className="text-emerald-400 font-mono font-bold">about</span> - Software engineer bio & background</div>
+              <div><span className="text-emerald-400 font-mono font-bold">skills</span> - Technical capabilities & proficiencies</div>
+              <div><span className="text-emerald-400 font-mono font-bold">projects</span> - Production projects (Belankon, JDIH, etc.)</div>
+              <div><span className="text-emerald-400 font-mono font-bold">experience</span> - Career timeline (88 Group, Alluvia, ESOLUSINDO)</div>
+              <div><span className="text-emerald-400 font-mono font-bold">education</span> - Formal degree & alma mater</div>
+              <div><span className="text-emerald-400 font-mono font-bold">contact</span> - Email, phone, WA & LinkedIn</div>
+              <div><span className="text-emerald-400 font-mono font-bold">cat resume.txt</span> - CV summary preview</div>
+              <div><span className="text-emerald-400 font-mono font-bold">sudo hire</span> - Direct candidate offer pipeline 😉</div>
               <div><span className="text-emerald-400 font-mono font-bold">clear</span> - Clear terminal buffer</div>
             </div>
           </div>
@@ -106,7 +107,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
       case 'projects':
         response = (
           <div className="space-y-3 text-xs">
-            <p className="text-cyan-300 font-mono font-bold">// PRODUCTION ARCHITECTURES:</p>
+            <p className="text-cyan-300 font-mono font-bold">// FEATURED PORTFOLIO PROJECTS:</p>
             {projectsData.map((proj) => (
               <div key={proj.id} className="pl-3 border-l-2 border-slate-700 space-y-0.5">
                 <div className="flex items-center gap-2">
@@ -137,13 +138,35 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
         );
         break;
 
+      case 'education':
+      case 'edu':
+        response = (
+          <div className="space-y-3 text-xs">
+            <p className="text-cyan-300 font-mono font-bold">// FORMAL EDUCATION & CERTIFICATES:</p>
+            {educationData.map((edu) => (
+              <div key={edu.id} className="pl-3 border-l-2 border-emerald-500/50">
+                <p className="text-white font-bold">{edu.major}</p>
+                <p className="text-cyan-400 font-mono text-[11px]">{edu.institution} ({edu.period})</p>
+              </div>
+            ))}
+            <div className="pt-2 pl-3 border-l-2 border-amber-500/50">
+              <p className="text-white font-bold">Certifications:</p>
+              {certificationsData.map((c) => (
+                <p key={c.id} className="text-slate-300 text-[11px]">• {c.title} - {c.issuer} ({c.issueDate})</p>
+              ))}
+            </div>
+          </div>
+        );
+        break;
+
       case 'contact':
         response = (
           <div className="space-y-1 text-xs text-slate-300 font-mono">
             <p className="text-cyan-300 font-bold">// GET IN TOUCH:</p>
             <p>Email: <a href={personalData.socials.email} className="text-emerald-400 underline">{personalData.email}</a></p>
-            <p>GitHub: <a href={personalData.socials.github} target="_blank" rel="noreferrer" className="text-cyan-400 underline">{personalData.socials.github}</a></p>
+            <p>Phone/WA: <span className="text-white">{personalData.phone}</span></p>
             <p>LinkedIn: <a href={personalData.socials.linkedin} target="_blank" rel="noreferrer" className="text-cyan-400 underline">{personalData.socials.linkedin}</a></p>
+            <p>Location: <span className="text-slate-400">{personalData.location}</span></p>
           </div>
         );
         break;
@@ -152,12 +175,12 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
         if (parts[1] === 'resume.txt' || parts[1] === 'resume') {
           response = (
             <div className="space-y-2 text-xs font-mono text-slate-300 p-3 bg-slate-900/80 rounded border border-slate-800">
-              <p className="text-cyan-400 font-bold">RESUME_SUMMARY.txt</p>
-              <p>Name: {personalData.name}</p>
-              <p>Title: Senior Software Engineer (5+ YOE)</p>
-              <p>Core: Go, TypeScript, Node.js, Kubernetes, AWS, PostgreSQL, React</p>
-              <p>Status: {personalData.status[lang]}</p>
-              <p className="text-emerald-400">Contact: {personalData.email}</p>
+              <p className="text-cyan-400 font-bold">RESUME_SUMMARY - {personalData.name.toUpperCase()}</p>
+              <p>Degree: D4 Teknik Informatika, Politeknik Negeri Jember (2020-2024)</p>
+              <p>Certification: BNSP Certified Web Developer (2024)</p>
+              <p>Experience: 88 Group (IT Programmer), Alluvia (Remote Maintenance), ESOLUSINDO (Full-stack)</p>
+              <p>Key Projects: Belankon Kurir, ISI-Piringku, JDIH Kab. Jember, Enterprise System</p>
+              <p>Email: {personalData.email} | Phone: {personalData.phone}</p>
             </div>
           );
         } else {
@@ -170,8 +193,8 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
           response = (
             <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs space-y-1">
               <p className="font-bold">🚀 ACCESS GRANTED: High Priority Candidate Selected!</p>
-              <p>Thank you for your interest! Let's discuss high-impact software engineering opportunities together.</p>
-              <p>Please reach out directly at: <a href={personalData.socials.email} className="underline text-white font-bold">{personalData.email}</a></p>
+              <p>Terima kasih atas ketertarikan Anda untuk merekrut Fasta Biqul Hoirot!</p>
+              <p>Silakan hubungi langsung melalui email: <a href={personalData.socials.email} className="underline text-white font-bold">{personalData.email}</a> atau WhatsApp: <a href={personalData.socials.whatsapp} target="_blank" rel="noreferrer" className="underline text-emerald-300 font-bold">{personalData.phone}</a></p>
             </div>
           );
         } else {
@@ -189,7 +212,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
         break;
 
       case 'whoami':
-        response = <p className="text-cyan-300 text-xs font-mono">visitor: An inquisitive engineer / tech recruiter exploring Rian's portfolio CLI.</p>;
+        response = <p className="text-cyan-300 text-xs font-mono">visitor: A recruiter / tech explorer discovering Fasta Biqul Hoirot's portfolio.</p>;
         break;
 
       default:
@@ -236,7 +259,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
     }
   };
 
-  const quickCommands = ['help', 'skills', 'projects', 'exp', 'cat resume.txt', 'sudo hire', 'clear'];
+  const quickCommands = ['help', 'about', 'skills', 'projects', 'exp', 'edu', 'cat resume.txt', 'sudo hire', 'clear'];
 
   const content = (
     <div className="rounded-2xl border border-slate-700/80 bg-slate-950/95 shadow-2xl overflow-hidden terminal-window flex flex-col h-[520px]">
@@ -248,7 +271,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
           <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
           <div className="ml-2 flex items-center gap-1.5 text-xs font-mono text-slate-300">
             <TerminalIcon className="w-3.5 h-3.5 text-cyan-400" />
-            <span>visitor@rian-machine:~ (zsh)</span>
+            <span>visitor@fasta-machine:~ (zsh)</span>
           </div>
         </div>
 
@@ -284,7 +307,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
         {history.map((item) => (
           <div key={item.id} className="space-y-1">
             <div className="flex items-center gap-2 text-slate-400">
-              <span className="text-emerald-400">visitor@rian:~$</span>
+              <span className="text-emerald-400">visitor@fasta:~$</span>
               <span className="text-white font-semibold">{item.command}</span>
             </div>
             <div className="pl-4">{item.output}</div>
@@ -293,7 +316,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
 
         {/* Current Active Input Prompt */}
         <div className="flex items-center gap-2 text-slate-400 pt-1">
-          <span className="text-emerald-400 font-mono">visitor@rian:~$</span>
+          <span className="text-emerald-400 font-mono">visitor@fasta:~$</span>
           <input
             ref={inputRef}
             type="text"

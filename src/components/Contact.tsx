@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, Send, MessageSquare, MapPin, Coffee, ArrowUpRight } from 'lucide-react';
+import { Mail, Copy, Check, Send, MessageSquare, MapPin, ArrowUpRight, Phone, MessageCircle } from 'lucide-react';
 import { personalData } from '../data/portfolioData';
 import type { Language } from '../types';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { LinkedinIcon } from './Icons';
 
 interface ContactProps {
   lang: Language;
@@ -11,10 +11,11 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    subject: 'Full-time Opportunity',
+    subject: 'Peluang Software Engineer',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,20 +28,28 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
+  const handleCopyPhone = () => {
+    if (!personalData.phone) return;
+    navigator.clipboard.writeText(personalData.phone);
+    setCopiedPhone(true);
+    onShowToast(lang === 'id' ? 'Nomor telepon berhasil disalin!' : 'Phone number copied to clipboard!');
+    setTimeout(() => setCopiedPhone(false), 2500);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate sending network request
+    // Simulate sending message
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
       onShowToast(
         lang === 'id'
-          ? 'Pesan Anda berhasil dikirim! Terima kasih telah menghubungi.'
-          : 'Your message has been sent successfully! Thank you for reaching out.'
+          ? 'Pesan Anda berhasil dikirim! Fasta akan segera merespons.'
+          : 'Your message has been sent successfully! Fasta will reply promptly.'
       );
-      setFormState({ name: '', email: '', subject: 'Full-time Opportunity', message: '' });
+      setFormState({ name: '', email: '', subject: 'Peluang Software Engineer', message: '' });
       setTimeout(() => setSubmitted(false), 5000);
     }, 1000);
   };
@@ -59,12 +68,12 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
             <span>{lang === 'id' ? '// 07. HUBUNGI SAYA' : '// 07. GET IN TOUCH'}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            {lang === 'id' ? 'Mari Berkolaborasi & Membangun' : "Let's Build Something Great"}
+            {lang === 'id' ? 'Mari Terhubung & Berkolaborasi' : "Let's Connect & Collaborate"}
           </h2>
           <p className="mt-3 text-slate-400 max-w-2xl text-base">
             {lang === 'id'
-              ? 'Terbuka untuk posisi Senior Software Engineer, Tech Lead, konsultasi arsitektur cloud, atau sekadar berdiskusi seputar sistem terdistribusi.'
-              : 'Open for Senior Software Engineer roles, tech leadership, cloud architecture consulting, or tech chats.'}
+              ? 'Terbuka untuk posisi Software Engineer, Full-stack Developer, pengelolaan sistem & basis data, atau kolaborasi proyek baru.'
+              : 'Open for Software Engineer roles, Full-stack Developer positions, database/server administration, or new project collaborations.'}
           </p>
         </div>
 
@@ -77,16 +86,19 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
             {/* Primary Email Card with 1-Click Copy */}
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-sm">
               <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider block mb-2">
-                {lang === 'id' ? 'Email Utama' : 'Direct Email'}
+                {lang === 'id' ? 'Email Langsung' : 'Direct Email'}
               </span>
               <div className="flex items-center justify-between gap-3">
-                <span className="text-base sm:text-lg font-bold text-white font-mono truncate">
+                <a
+                  href={personalData.socials.email}
+                  className="text-base sm:text-lg font-bold text-white font-mono truncate hover:text-cyan-400 transition-colors"
+                >
                   {personalData.email}
-                </span>
+                </a>
                 <button
                   onClick={handleCopyEmail}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 hover:text-white transition-colors shrink-0"
-                  title="Copy Email"
+                  title="Salin Email"
                 >
                   {copiedEmail ? (
                     <>
@@ -103,39 +115,65 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
               </div>
             </div>
 
-            {/* Social Channels */}
+            {/* Phone & WhatsApp Card */}
+            {personalData.phone && (
+              <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-sm">
+                <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider block mb-2">
+                  {lang === 'id' ? 'Telepon & WhatsApp' : 'Phone & WhatsApp'}
+                </span>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="text-base sm:text-lg font-bold text-white font-mono">
+                      {personalData.phone}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {personalData.socials.whatsapp && (
+                      <a
+                        href={personalData.socials.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 text-xs font-semibold transition-colors"
+                        title="Chat WhatsApp"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5" />
+                        <span>Chat WA</span>
+                      </a>
+                    )}
+                    <button
+                      onClick={handleCopyPhone}
+                      className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                      title="Salin Nomor"
+                    >
+                      {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Professional Profiles */}
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-sm space-y-3">
               <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
-                {lang === 'id' ? 'Jejaring Profesional' : 'Professional Profiles'}
+                {lang === 'id' ? 'Jejaring Profesional' : 'Professional Profile'}
               </span>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <a
-                  href={personalData.socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-cyan-500/40 text-slate-300 hover:text-white transition-all group"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <GithubIcon className="w-4 h-4 text-slate-400 group-hover:text-cyan-400" />
-                    <span className="text-xs font-semibold">GitHub</span>
+              <a
+                href={personalData.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-blue-500/40 text-slate-300 hover:text-white transition-all group"
+              >
+                <div className="flex items-center gap-2.5">
+                  <LinkedinIcon className="w-4 h-4 text-slate-400 group-hover:text-blue-400" />
+                  <div>
+                    <span className="text-xs font-semibold block">LinkedIn</span>
+                    <span className="text-[11px] font-mono text-slate-500">fasta-biqul-hoirot</span>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors" />
-                </a>
-
-                <a
-                  href={personalData.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-blue-500/40 text-slate-300 hover:text-white transition-all group"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <LinkedinIcon className="w-4 h-4 text-slate-400 group-hover:text-blue-400" />
-                    <span className="text-xs font-semibold">LinkedIn</span>
-                  </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400 transition-colors" />
-                </a>
-              </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400 transition-colors" />
+              </a>
             </div>
 
             {/* Location & Timezone Card */}
@@ -143,32 +181,12 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
               <MapPin className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-bold text-white mb-1">
-                  {lang === 'id' ? 'Lokasi & Zona Waktu' : 'Location & Timezone'}
+                  {lang === 'id' ? 'Domisili & Ketersediaan' : 'Location & Availability'}
                 </h4>
                 <p className="text-xs text-slate-400 leading-relaxed">
-                  {personalData.location} · UTC+7 (WIB). Nyaman bekerja asynchronous maupun overlapping time zones dengan tim internasional (US/EU/APAC).
+                  {personalData.location}. Terbuka untuk posisi Full-time On-site (Jawa Timur & sekitarnya), Hybrid, maupun Remote secara nasional dan internasional.
                 </p>
               </div>
-            </div>
-
-            {/* Tech Chat / Coffee Banner */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-950/40 to-blue-950/40 border border-cyan-800/40 backdrop-blur-sm">
-              <div className="flex items-center gap-2 text-cyan-400 mb-2 font-mono text-xs font-bold">
-                <Coffee className="w-4 h-4" />
-                <span>{lang === 'id' ? 'Virtual Coffee / Tech Talk' : 'Virtual Coffee / Tech Chat'}</span>
-              </div>
-              <p className="text-xs text-slate-300 leading-relaxed mb-3">
-                {lang === 'id'
-                  ? 'Punya ide proyek menarik atau ingin berdiskusi seputar arsitektur Go & Kubernetes? Jadwalkan obrolan santai 15 menit.'
-                  : 'Have an interesting problem or want to brainstorm system design? Schedule a quick 15-minute coffee chat.'}
-              </p>
-              <a
-                href={personalData.socials.email}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
-              >
-                <span>{lang === 'id' ? 'Kirim Undangan Obrolan' : 'Schedule a Chat'}</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
             </div>
 
           </div>
@@ -186,8 +204,8 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
                   <Check className="w-4 h-4 text-emerald-400" />
                   <span>
                     {lang === 'id'
-                      ? 'Terima kasih! Pesan Anda telah diterima. Saya akan segera membalas.'
-                      : 'Thank you! Your message has been received. I will reply shortly.'}
+                      ? 'Terima kasih! Pesan Anda telah diterima. Fasta akan segera merespons.'
+                      : 'Thank you! Your message has been received. Fasta will reply promptly.'}
                   </span>
                 </div>
               )}
@@ -197,14 +215,14 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
                   {/* Name Input */}
                   <div>
                     <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                      {lang === 'id' ? 'Nama Anda / Rekruter' : 'Your Name / Recruiter'} *
+                      {lang === 'id' ? 'Nama Anda / Perusahaan' : 'Your Name / Company'} *
                     </label>
                     <input
                       type="text"
                       required
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      placeholder="Jane Doe"
+                      placeholder="Nama Lengkap / Rekruter"
                       className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
                     />
                   </div>
@@ -219,7 +237,7 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
                       required
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      placeholder="jane@company.com"
+                      placeholder="email@company.com"
                       className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
                     />
                   </div>
@@ -228,24 +246,24 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
                 {/* Subject Selector */}
                 <div>
                   <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                    {lang === 'id' ? 'Topik Diskusi' : 'Discussion Topic'}
+                    {lang === 'id' ? 'Keperluan / Topik' : 'Purpose / Topic'}
                   </label>
                   <select
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors"
                   >
-                    <option value="Full-time Opportunity">
-                      {lang === 'id' ? 'Peluang Kerja Tetap (Full-time Role)' : 'Full-time Opportunity'}
+                    <option value="Peluang Software Engineer">
+                      {lang === 'id' ? 'Peluang Kerja Software Engineer / Full-stack' : 'Software Engineer Job Opportunity'}
                     </option>
-                    <option value="Contract / Freelance">
-                      {lang === 'id' ? 'Proyek Kontrak / Freelance' : 'Contract / Consulting Project'}
+                    <option value="Proyek Web / Mobile">
+                      {lang === 'id' ? 'Pengembangan Proyek Web / Mobile' : 'Web / Mobile Development Project'}
                     </option>
-                    <option value="Architecture Consulting">
-                      {lang === 'id' ? 'Konsultasi Arsitektur Sistem' : 'System Architecture Review'}
+                    <option value="Pemeliharaan Server & Database">
+                      {lang === 'id' ? 'Pemeliharaan Server & Basis Data' : 'Server & Database Maintenance'}
                     </option>
-                    <option value="Tech Chat / Greeting">
-                      {lang === 'id' ? 'Obrolan Santai / Diskusi Tech' : 'General Tech Chat / Say Hello'}
+                    <option value="Diskusi Umum">
+                      {lang === 'id' ? 'Diskusi Teknis / Terhubung' : 'General Tech Chat / Connect'}
                     </option>
                   </select>
                 </div>
@@ -262,8 +280,8 @@ export const Contact: React.FC<ContactProps> = ({ lang, onShowToast }) => {
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     placeholder={
                       lang === 'id'
-                        ? 'Ceritakan tentang peran, tantangan teknis, atau sistem yang ingin Anda bangun...'
-                        : 'Tell me about the role, technical challenge, or system you are looking to build...'
+                        ? 'Sampaikan kebutuhan sistem, posisi lowongan, atau tawaran kerja sama...'
+                        : 'Explain the role requirements, system project, or collaboration details...'
                     }
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
                   />

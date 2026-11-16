@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Terminal, FileText, Mail } from 'lucide-react';
+import { ArrowDown, Terminal, FileText, Mail, MessageCircle } from 'lucide-react';
 import { personalData } from '../data/portfolioData';
 import type { Language } from '../types';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { LinkedinIcon } from './Icons';
 
 interface HeroProps {
   lang: Language;
@@ -17,14 +17,14 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenTerminal }) => {
   // Typewriter effect
   useEffect(() => {
     const currentRole = personalData.roles[roleIndex];
-    const typingSpeed = isDeleting ? 40 : 80;
+    const typingSpeed = isDeleting ? 35 : 75;
 
     const timer = setTimeout(() => {
       if (!isDeleting && displayText.length < currentRole.length) {
         setDisplayText(currentRole.substring(0, displayText.length + 1));
       } else if (!isDeleting && displayText.length === currentRole.length) {
         // Pause before deleting
-        setTimeout(() => setIsDeleting(true), 2000);
+        setTimeout(() => setIsDeleting(true), 2200);
       } else if (isDeleting && displayText.length > 0) {
         setDisplayText(currentRole.substring(0, displayText.length - 1));
       } else if (isDeleting && displayText.length === 0) {
@@ -37,15 +37,14 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenTerminal }) => {
   }, [displayText, isDeleting, roleIndex]);
 
   const techBadges = [
-    { name: "Go / Golang", color: "border-cyan-500/30 bg-cyan-500/10 text-cyan-300" },
-    { name: "TypeScript", color: "border-blue-500/30 bg-blue-500/10 text-blue-300" },
-    { name: "React 19", color: "border-sky-500/30 bg-sky-500/10 text-sky-300" },
-    { name: "Node.js", color: "border-emerald-500/30 bg-emerald-500/10 text-emerald-300" },
-    { name: "Docker", color: "border-blue-400/30 bg-blue-400/10 text-blue-300" },
-    { name: "Kubernetes", color: "border-indigo-500/30 bg-indigo-500/10 text-indigo-300" },
-    { name: "PostgreSQL", color: "border-cyan-600/30 bg-cyan-600/10 text-cyan-200" },
-    { name: "Kafka & Redis", color: "border-rose-500/30 bg-rose-500/10 text-rose-300" },
-    { name: "AWS Cloud", color: "border-amber-500/30 bg-amber-500/10 text-amber-300" },
+    { name: "Web Development", color: "border-cyan-500/30 bg-cyan-500/10 text-cyan-300" },
+    { name: "Mobile App Development", color: "border-blue-500/30 bg-blue-500/10 text-blue-300" },
+    { name: "Database Management (MySQL)", color: "border-sky-500/30 bg-sky-500/10 text-sky-300" },
+    { name: "Server Maintenance & High Availability", color: "border-emerald-500/30 bg-emerald-500/10 text-emerald-300" },
+    { name: "Large-Scale Data Processing", color: "border-purple-500/30 bg-purple-500/10 text-purple-300" },
+    { name: "Machine Learning & AI Optimization", color: "border-rose-500/30 bg-rose-500/10 text-rose-300" },
+    { name: "Troubleshooting & Problem Solving", color: "border-amber-500/30 bg-amber-500/10 text-amber-300" },
+    { name: "Cross-Functional Team Collaboration", color: "border-indigo-500/30 bg-indigo-500/10 text-indigo-300" },
   ];
 
   return (
@@ -78,11 +77,16 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenTerminal }) => {
             </span>
           </div>
 
+          {/* Candidate Name */}
+          <div className="text-sm uppercase font-mono font-bold tracking-widest text-cyan-400 mb-2">
+            FASTA BIQUL HOIROT, S.Tr.Kom
+          </div>
+
           {/* Main Title */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
-            {lang === 'id' ? 'Membangun Sistem' : 'Engineering Scalable'}{' '}
+            {lang === 'id' ? 'Membangun Solusi' : 'Engineering Impactful'}{' '}
             <span className="gradient-text">
-              {lang === 'id' ? 'Andal & Berkinerja Tinggi' : 'High-Impact Systems'}
+              {lang === 'id' ? 'Web, Mobile & Basis Data' : 'Web, Mobile & Data Systems'}
             </span>
           </h1>
 
@@ -104,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenTerminal }) => {
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5"
             >
-              <span>{lang === 'id' ? 'Eksplorasi Proyek' : 'View Projects'}</span>
+              <span>{lang === 'id' ? 'Lihat Portofolio Proyek' : 'View Projects'}</span>
               <ArrowDown className="w-4 h-4" />
             </a>
 
@@ -113,29 +117,20 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenTerminal }) => {
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-mono font-medium text-slate-200 bg-slate-900/90 border border-slate-700/80 hover:border-cyan-500/50 hover:bg-slate-800 transition-all transform hover:-translate-y-0.5"
             >
               <Terminal className="w-4 h-4 text-emerald-400" />
-              <span>{lang === 'id' ? 'Jalankan Terminal CLI' : 'Open Terminal CLI'}</span>
+              <span>{lang === 'id' ? 'Jalankan CLI Terminal' : 'Interactive CLI'}</span>
             </button>
 
             <a
-              href="#about"
+              href="#contact"
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-medium text-slate-300 bg-slate-900/50 border border-slate-800 hover:bg-slate-800/80 hover:text-white transition-all"
             >
               <FileText className="w-4 h-4 text-blue-400" />
-              <span>{lang === 'id' ? 'Filosofi Kode' : 'Code Philosophy'}</span>
+              <span>{lang === 'id' ? 'Hubungi Fasta' : 'Contact Fasta'}</span>
             </a>
           </div>
 
-          {/* Social Links */}
+          {/* Direct Contact Links */}
           <div className="flex items-center gap-4 text-slate-400 mb-14">
-            <a
-              href={personalData.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:text-cyan-400 hover:border-cyan-500/40 transition-all hover:scale-110"
-              title="GitHub Profile"
-            >
-              <GithubIcon className="w-5 h-5" />
-            </a>
             <a
               href={personalData.socials.linkedin}
               target="_blank"
@@ -147,17 +142,28 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenTerminal }) => {
             </a>
             <a
               href={personalData.socials.email}
-              className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:text-emerald-400 hover:border-emerald-500/40 transition-all hover:scale-110"
-              title="Send Direct Email"
+              className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:text-cyan-400 hover:border-cyan-500/40 transition-all hover:scale-110"
+              title="Kirim Email"
             >
               <Mail className="w-5 h-5" />
             </a>
+            {personalData.socials.whatsapp && (
+              <a
+                href={personalData.socials.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:text-emerald-400 hover:border-emerald-500/40 transition-all hover:scale-110"
+                title="Chat WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
+            )}
           </div>
 
           {/* Tech Badges Chips */}
           <div className="w-full pt-8 border-t border-slate-800/60">
             <p className="text-xs uppercase tracking-wider font-mono text-slate-500 mb-4">
-              // CORE ENGINEERING STACK
+              // BIDANG KEAHLIAN TEKNIS UTAMA
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
               {techBadges.map((tech) => (

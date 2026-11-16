@@ -1,305 +1,303 @@
-import type { PersonalInfo, Project, Experience, SkillCategory, Certification, Testimonial } from '../types';
+import type { PersonalInfo, Project, Experience, SkillCategory, Certification, Testimonial, Education } from '../types';
 
 export const personalData: PersonalInfo = {
-  name: "Rian Pratama",
-  handle: "rianpratama.dev",
-  title: "Senior Software Engineer",
+  name: "Fasta Biqul Hoirot",
+  handle: "fasta-biqul-hoirot",
+  title: "Software Engineer & Full-stack Developer",
   roles: [
-    "Full-Stack Software Engineer",
-    "Distributed Systems Architect",
-    "Golang & TypeScript Specialist",
-    "Cloud & DevOps Practitioner"
+    "Software Engineer (Web & Mobile)",
+    "Full-stack Developer",
+    "Server & Database Maintenance Specialist",
+    "Data Processing & Machine Learning Integrator"
   ],
   status: {
-    id: "Terbuka untuk peluang kerja & proyek baru",
-    en: "Available for new opportunities & contracts"
+    id: "Terbuka untuk peluang Software Engineer & Proyek Baru",
+    en: "Available for Software Engineer roles & new opportunities"
   },
-  location: "Jakarta, Indonesia (Available for Remote Worldwide)",
-  email: "rian.pratama.dev@gmail.com",
-  phone: "+62 812-3456-7890",
+  location: "Jawa Timur, Indonesia (Jember · Remote & On-site Available)",
+  email: "fastabikul87@gmail.com",
+  phone: "081359595430",
   bio: {
-    id: "Software Engineer dengan 5+ tahun pengalaman dalam merancang dan membangun sistem perangkat lunak berskala besar, andal, dan berkinerja tinggi. Berfokus pada arsitektur microservices, concurrency, cloud-native infrastructure, dan antarmuka web modern yang responsif.",
-    en: "Software Engineer with 5+ years of experience designing and building scalable, reliable, and high-performance software systems. Focused on microservices architecture, concurrency, cloud-native infrastructure, and modern responsive web interfaces."
+    id: "Software Engineer lulusan D4 Teknik Informatika Politeknik Negeri Jember dengan keahlian dalam pengembangan aplikasi berbasis web dan mobile serta manajemen basis data perusahaan. Berpengalaman langsung di lingkungan perusahaan maupun sebagai freelancer dalam membangun arsitektur sistem end-to-end, pengolahan data skala besar (data processing), integrasi Machine Learning, dan optimasi model AI. Terampil dalam pemecahan masalah teknis (troubleshooting), kolaborasi lintas tim (cross-functional), serta pengembangan solusi perangkat lunak yang terukur.",
+    en: "Software Engineer graduated from D4 Informatics Engineering at Politeknik Negeri Jember with expertise in web and mobile application development and enterprise database management. Experienced in corporate environments and freelance roles building end-to-end system architectures, large-scale data processing pipelines, Machine Learning integrations, and AI model optimization. Skilled in technical troubleshooting, cross-functional collaboration, and delivering scalable software solutions."
   },
   philosophies: [
     {
-      title: { id: "Arsitektur Skalabel & Andal", en: "Scalable & Resilient Systems" },
+      title: { id: "Arsitektur End-to-End & Terukur", en: "End-to-End & Scalable Architecture" },
       desc: { 
-        id: "Membangun sistem yang tahan beban tinggi, memiliki graceful degradation, serta menerapkan pola fault-tolerant seperti circuit breaker dan retry queues.",
-        en: "Building systems that withstand high load, degrade gracefully, and apply fault-tolerant patterns like circuit breakers and retry queues."
+        id: "Merancang dan membangun sistem perangkat lunak secara menyeluruh, mulai dari perancangan skema basis data, backend API, antarmuka pengguna, hingga infrastruktur server yang handal.",
+        en: "Designing and engineering software systems comprehensively from database schemas and backend APIs to responsive frontends and resilient server infrastructure."
       },
       icon: "Cpu"
     },
     {
-      title: { id: "Clean Code & Type Safety", en: "Clean Code & Type Safety" },
+      title: { id: "Manajemen & Keamanan Basis Data", en: "Database Management & Security" },
       desc: { 
-        id: "Kode yang rapi, teruji otomatis (unit & integration tests), serta type-safety yang ketat untuk meminimalisir bug sebelum mencapai produksi.",
-        en: "Clean code with automated testing (unit & integration) and strict type-safety to eliminate bugs before hitting production."
+        id: "Mengelola, menata, dan mengamankan basis data server melalui prosedur pemeliharaan rutin guna menjaga integritas data perusahaan dan efisiensi query.",
+        en: "Managing, organizing, and securing server databases through systematic maintenance routines to preserve data integrity and peak query efficiency."
       },
       icon: "Code2"
     },
     {
-      title: { id: "Observabilitas Sejak Awal", en: "Observability by Default" },
+      title: { id: "High Availability & Troubleshooting", en: "High Availability & Troubleshooting" },
       desc: { 
-        id: "Menerapkan distributed tracing, structured logging, dan real-time metric dashboards (Prometheus/Grafana) agar performa sistem selalu terukur.",
-        en: "Embedding distributed tracing, structured logging, and real-time metrics (Prometheus/Grafana) so performance is always measurable."
+        id: "Menjaga ketersediaan sistem dan layanan server lokal maupun publik tetap stabil, aman, dan memiliki performa optimal dengan respon cepat terhadap kendala teknis.",
+        en: "Ensuring high availability across local and public server infrastructure, maintaining optimal stability and rapid resolution of technical issues."
       },
       icon: "Activity"
     },
     {
-      title: { id: "Automasi & Developer Experience", en: "Automation & DX" },
+      title: { id: "Integrasi AI & Data Processing", en: "AI Integration & Data Processing" },
       desc: { 
-        id: "Alur CI/CD otomatis, containerization dengan Docker, dan infrastruktur terkontrol (IaC) untuk rilis cepat dan bebas stres.",
-        en: "Automated CI/CD pipelines, containerization with Docker, and Infrastructure as Code for rapid, stress-free releases."
+        id: "Mengolah data skala besar (data processing) serta mengintegrasikan dan mengoptimasi model Machine Learning/AI untuk menghasilkan solusi cerdas berdampak nyata.",
+        en: "Processing large-scale datasets while integrating and optimizing Machine Learning/AI models into production applications for tangible real-world impact."
       },
       icon: "GitBranch"
     }
   ],
   stats: [
     {
-      label: { id: "Pengalaman", en: "Experience" },
-      value: "5+ Thn",
-      sublabel: { id: "Di Industri Tech", en: "In Tech Industry" }
+      label: { id: "Pendidikan", en: "Education" },
+      value: "D4 TI",
+      sublabel: { id: "Politeknik Negeri Jember", en: "Politeknik Negeri Jember" }
     },
     {
-      label: { id: "Proyek Selesai", en: "Projects Delivered" },
-      value: "35+",
-      sublabel: { id: "Produksi Skala Besar", en: "Production Systems" }
+      label: { id: "Sertifikasi", en: "Certification" },
+      value: "BNSP",
+      sublabel: { id: "Certified Web Developer", en: "Certified Web Developer" }
     },
     {
-      label: { id: "System Uptime", en: "Reliability" },
-      value: "99.98%",
-      sublabel: { id: "SLA Produksi", en: "Production SLA" }
+      label: { id: "Pengalaman Kerja", en: "Experience" },
+      value: "3+ Thn",
+      sublabel: { id: "Perusahaan & Freelance", en: "Corporate & Freelance" }
     },
     {
-      label: { id: "GitHub Commits", en: "Code Commits" },
-      value: "2,400+",
-      sublabel: { id: "Aktivitas Kontribusi", en: "Active Contributions" }
+      label: { id: "Keandalan Server", en: "Server Reliability" },
+      value: "99.9%",
+      sublabel: { id: "High Availability SLA", en: "High Availability SLA" }
     }
   ],
   socials: {
-    github: "https://github.com/rianpratama",
-    linkedin: "https://linkedin.com/in/rianpratama",
-    twitter: "https://x.com/rianpratama_dev",
-    email: "mailto:rian.pratama.dev@gmail.com",
+    github: "https://github.com",
+    linkedin: "https://linkedin.com/in/fasta-biqul-hoirot-44a05115b",
+    email: "mailto:fastabikul87@gmail.com",
+    phone: "tel:081359595430",
+    whatsapp: "https://wa.me/6281359595430",
     resume: "#resume"
   }
 };
 
 export const projectsData: Project[] = [
   {
-    id: "omnipulse-engine",
-    title: "OmniPulse Event Stream",
+    id: "belankon-kurir",
+    title: "Belankon Kurir",
     tagline: {
-      id: "Platform streaming event terdistribusi dengan throughput tinggi & latensi sub-5ms",
-      en: "High-throughput distributed event streaming platform with sub-5ms latency"
+      id: "Solusi digital optimasi operasional logistik dan pelacakan pengiriman barang kurir toko",
+      en: "Digital logistics optimization and real-time delivery tracking platform for retail couriers"
     },
     description: {
-      id: "Sistem pengolahan event terdistribusi untuk memproses transaksi finansial secara real-time. Dibangun menggunakan Go dan Kafka dengan protokol komunikasi gRPC untuk efisiensi transfer data maksimal.",
-      en: "Distributed event processing system for real-time financial transaction streams. Built using Go and Kafka with gRPC communication protocols for maximal throughput."
+      id: "Aplikasi yang dikembangkan untuk mengoptimalkan operasional logistik toko, mencakup manajemen armada kurir, perutean pengiriman barang secara efisien, serta pelacakan status pengiriman real-time.",
+      en: "Application developed to streamline store logistics, featuring courier fleet management, efficient delivery routing, and real-time package delivery tracking."
     },
     architecture: {
-      id: "Event-driven microservices dengan partition balancing otomatis, Redis pub/sub caching, dan sinkronisasi log append-only.",
-      en: "Event-driven microservices featuring auto partition rebalancing, Redis pub/sub caching, and append-only log synchronization."
-    },
-    category: "Backend & Cloud",
-    tags: ["Go (Golang)", "Apache Kafka", "gRPC", "Docker", "Redis", "PostgreSQL", "Prometheus"],
-    metrics: ["120k RPS Throughput", "sub-5ms P99 Latency", "Zero Message Loss"],
-    githubUrl: "https://github.com/rianpratama/omnipulse-engine",
-    demoUrl: "https://omnipulse-demo.dev",
-    featured: true,
-    keyFeatures: {
-      id: [
-        "Distributed consensus menggunakan protokol Raft",
-        "Pipeline kompresi binary protocol buffers (Protobuf)",
-        "Dukungan dead-letter queue (DLQ) otomatis",
-        "Dashboard metrik Prometheus & Grafana terintegrasi"
-      ],
-      en: [
-        "Distributed consensus using Raft protocol",
-        "Binary protocol buffer (Protobuf) compression pipeline",
-        "Automated dead-letter queue (DLQ) support",
-        "Built-in Prometheus & Grafana metric dashboard"
-      ]
-    }
-  },
-  {
-    id: "codesentinel-ai",
-    title: "CodeSentinel AI Reviewer",
-    tagline: {
-      id: "Asisten review kode otomatis berbasis LLM & analisis statis keamanan untuk CI/CD",
-      en: "LLM-powered automated code review & security static analysis agent for CI/CD"
-    },
-    description: {
-      id: "Alat CLI dan GitHub Actions bot yang memindai pull request, menganalisis Abstract Syntax Tree (AST), mendeteksi celah keamanan OWASP, dan memberikan saran refactoring kode secara kontekstual.",
-      en: "CLI tool and GitHub Actions bot that scans pull requests, parses ASTs, detects OWASP security vulnerabilities, and suggests context-aware refactoring."
-    },
-    architecture: {
-      id: "CLI Node.js/TypeScript dengan Babel AST parser, integrasi Gemini 2.0 Flash API dengan prompt chaining berstruktur.",
-      en: "Node.js/TypeScript CLI with Babel AST parser, Gemini 2.0 Flash API integration with structured prompt chaining."
-    },
-    category: "AI & Tools",
-    tags: ["TypeScript", "Node.js", "AST Parser", "Gemini API", "GitHub Actions", "Docker"],
-    metrics: ["70% Review Time Saved", "450+ Active Repos", "OWASP Top 10 Coverage"],
-    githubUrl: "https://github.com/rianpratama/codesentinel-ai",
-    demoUrl: "https://codesentinel.dev",
-    featured: true,
-    keyFeatures: {
-      id: [
-        "Pemeriksaan celah SQL Injection, XSS, dan Secret Leaks",
-        "Saran perbaikan kode otomatis berupa diff git satu-klik",
-        "Integrasi native dengan workflow GitHub Actions & GitLab CI",
-        "Model token optimizer untuk menekan biaya API hingga 65%"
-      ],
-      en: [
-        "Automated vulnerability detection for SQLi, XSS, and Secret Leaks",
-        "One-click Git diff suggestions directly in PR comments",
-        "Native GitHub Actions & GitLab CI workflow integrations",
-        "Token optimization caching reducing LLM costs by 65%"
-      ]
-    }
-  },
-  {
-    id: "devpulse-dashboard",
-    title: "DevPulse APM & Cloud Console",
-    tagline: {
-      id: "Dashboard monitoring observability aplikasi & metrik cloud multi-cluster",
-      en: "Modern application observability & multi-cluster cloud metrics dashboard"
-    },
-    description: {
-      id: "Aplikasi web modern untuk memonitor health check server, error rate, memory leak, dan trace jaringan lintas microservices dengan UI yang interaktif dan responsif.",
-      en: "Full-stack observability web application to track microservice health checks, error rates, memory leaks, and distributed network traces."
-    },
-    architecture: {
-      id: "React 19 + TypeScript, Tailwind CSS, WebSocket live updates, dan backend ClickHouse untuk query log bervolume tinggi.",
-      en: "React 19 + TypeScript, Tailwind CSS, WebSocket live streaming, and ClickHouse backend for high-volume log querying."
+      id: "Arsitektur client-server dengan integrasi REST API, sinkronisasi data pengiriman real-time, dan manajemen status pesanan terstruktur.",
+      en: "Client-server architecture with REST API integration, real-time shipment status synchronization, and structured order dispatch pipeline."
     },
     category: "Full-Stack",
-    tags: ["React 19", "TypeScript", "Tailwind CSS", "WebSocket", "ClickHouse", "Go", "Docker"],
-    metrics: ["10M+ Daily Logs Indexed", "<200ms Query Response", "Real-time SSE"],
-    githubUrl: "https://github.com/rianpratama/devpulse-apm",
-    demoUrl: "https://devpulse-demo.dev",
+    tags: ["Mobile App", "Web Development", "REST API", "Database Management", "Logistics", "Geolocation"],
+    metrics: ["Operasional Logistik Optimal", "Pelacakan Real-time", "Efisiensi Kurir Toko"],
+    githubUrl: "https://github.com",
+    demoUrl: "https://esolusindo.com",
     featured: true,
     keyFeatures: {
       id: [
-        "Visualisasi dependensi service dalam grafik interaktif",
-        "Live tail log streaming via WebSocket",
-        "Pemberitahuan alert via Telegram, Slack & Webhook",
-        "Sistem tema Dark/Light modern dengan layout responsif"
+        "Pelacakan status pengiriman barang dari toko ke konsumen secara akurat",
+        "Manajemen rute dan distribusi tugas kurir harian",
+        "Dashboard admin terintegrasi untuk pemantauan armada logistik",
+        "Notifikasi perubahan status paket secara langsung"
       ],
       en: [
-        "Interactive service dependency topology map",
-        "Live tail log streaming over WebSockets",
-        "Instant alert notifications via Telegram, Slack & Webhooks",
-        "Modern Dark/Light theme with responsive layout"
+        "Accurate parcel dispatch tracking from store to end-consumer",
+        "Route management and daily courier task distribution",
+        "Integrated admin dashboard for courier fleet monitoring",
+        "Instant shipment status transition notifications"
       ]
     }
   },
   {
-    id: "finpay-distributed-ledger",
-    title: "FinPay Idempotent Ledger",
+    id: "isi-piringku",
+    title: "ISI-Piringku Health Tracker",
     tagline: {
-      id: "Sistem buku kas transaksi keuangan terdistribusi dengan jaminan ACID & zero-duplicate",
-      en: "Distributed financial transaction ledger with ACID guarantee & idempotent execution"
+      id: "Platform pemantauan kesehatan & evaluasi asupan gizi harian secara terstruktur",
+      en: "Health monitoring platform to record and evaluate structured daily nutritional intake"
     },
     description: {
-      id: "Core engine perbankan digital untuk mutasi rekening, transfer antar-bank, dan rekonsiliasi otomatis dengan integritas data ganda (double-entry bookkeeping).",
-      en: "Core digital banking engine handling balance mutations, inter-bank transfers, and automated reconciliation with double-entry bookkeeping."
+      id: "Aplikasi pemantauan kesehatan komprehensif yang memfasilitasi pengguna dalam mencatat makanan harian, mengevaluasi keseimbangan nutrisi, dan mendapatkan insight kesehatan berbasis pedoman gizi seimbang.",
+      en: "Comprehensive health monitoring application enabling users to log daily meals, assess nutritional balance, and gain personalized insights based on balanced diet guidelines."
     },
     architecture: {
-      id: "PostgreSQL dengan transaksi serializable, Redis distributed locks, dan arsitektur Outbox Pattern untuk pengiriman event transaksi.",
-      en: "PostgreSQL serializable isolation, Redis distributed locking, and Outbox Pattern for reliable transactional event dispatching."
+      id: "Desain sistem web interaktif dengan skema database relasional untuk logging makanan, kalkulator nutrisi otomatis, dan visualisasi riwayat gizi.",
+      en: "Interactive web system design with relational database schemas for meal logging, automated nutrition calculating, and historical data visualization."
+    },
+    category: "Full-Stack",
+    tags: ["Web Application", "Nutritional Analysis", "Database MySQL", "RESTful API", "UI/UX Design"],
+    metrics: ["Pencatatan Gizi Terstruktur", "Evaluasi Nutrisi Harian", "Antarmuka Ramah Pengguna"],
+    githubUrl: "https://github.com",
+    demoUrl: "https://esolusindo.com",
+    featured: true,
+    keyFeatures: {
+      id: [
+        "Pencatatan menu makanan harian sesuai kategori gizi",
+        "Kalkulasi asupan kalori dan nutrisi harian secara otomatis",
+        "Laporan riwayat konsumsi mingguan dan bulanan pengguna",
+        "Antarmuka yang bersih, intuitif, dan responsif di smartphone"
+      ],
+      en: [
+        "Daily meal intake logging categorized by nutritional groups",
+        "Automated daily calorie and macronutrient computation",
+        "Weekly and monthly user nutritional progress reporting",
+        "Clean, intuitive, and mobile-friendly responsive interface"
+      ]
+    }
+  },
+  {
+    id: "jdih-jember",
+    title: "JDIH Kabupaten Jember",
+    tagline: {
+      id: "Portal Jaringan Dokumentasi dan Informasi Hukum resmi Kabupaten Jember",
+      en: "Official Legal Documentation and Information Network portal for Jember Regency"
+    },
+    description: {
+      id: "Situs web resmi JDIH Kabupaten Jember yang berfungsi sebagai pusat penyimpanan, pengelolaan, penelusuran, dan pengarsipan produk hukum daerah serta layanan administrasi publik bagi masyarakat.",
+      en: "Official legal portal of Jember Regency serving as a centralized hub for storing, managing, searching, and archiving local government legal documents and public administrative records."
+    },
+    architecture: {
+      id: "Sistem manajemen dokumen hukum berbasis web dengan pengindeksan data terstruktur, pencarian cepat (full-text search), dan hak akses bertingkat.",
+      en: "Web-based legal document management system with structured data indexing, fast full-text searching, and tiered administrative access controls."
     },
     category: "Backend & Cloud",
-    tags: ["Go", "PostgreSQL", "Redis", "Docker", "Clean Architecture", "REST API"],
-    metrics: ["100% Data Accuracy", "10,000+ TPS Tested", "Zero Concurrency Drift"],
-    githubUrl: "https://github.com/rianpratama/finpay-ledger",
-    demoUrl: "https://finpay-ledger-docs.dev",
-    featured: false,
+    tags: ["Web Portal", "Document Management", "Government System", "Database Security", "Search Indexing"],
+    metrics: ["Pusat Arsip Hukum Publik", "Pencarian Cepat & Akurat", "Keamanan Dokumen Resmi"],
+    githubUrl: "https://github.com",
+    demoUrl: "https://jdih.jemberkab.go.id",
+    featured: true,
     keyFeatures: {
       id: [
-        "Idempotency key enforcement mencegah double spending",
-        "Audit trail lengkap dengan cryptographic hash verification",
-        "Automated reconciliation worker setiap akhir hari",
-        "Unit test & load test coverage mencapai 92%"
+        "Pusat repositori produk hukum: Perda, Perbup, SK Bupati, dan Keputusan Daerah",
+        "Fitur pencarian dan filter dokumen hukum berdasarkan nomor, tahun, dan topik",
+        "Sistem pengarsipan digital terstruktur dengan akses unduh berkas publik",
+        "Panel administrasi pengelolaan dan verifikasi dokumen oleh dinas terkait"
       ],
       en: [
-        "Idempotency key enforcement preventing double payments",
-        "Complete audit trail with cryptographic hash verification",
-        "Automated end-of-day reconciliation background worker",
-        "92% unit test & load test suite code coverage"
+        "Central legal repository: Regional Regulations, Decrees, and Legal Decisions",
+        "Fast document search and filtering by number, year, and legal category",
+        "Structured digital archiving system with public document download access",
+        "Administrative dashboard for official legal verification and publishing"
       ]
     }
   },
   {
-    id: "kubeops-iac",
-    title: "NexusOps Kubernetes Engine",
+    id: "group-88-erp",
+    title: "Integrated Enterprise System (88 Group)",
     tagline: {
-      id: "Otomasi provisi cluster Kubernetes & CI/CD GitOps dengan Terraform",
-      en: "Automated Kubernetes cluster provisioning & GitOps CI/CD engine with Terraform"
+      id: "Ekosistem aplikasi & sistem informasi terintegrasi lintas divisi perusahaan",
+      en: "Integrated application ecosystem & enterprise information system across corporate divisions"
     },
     description: {
-      id: "Blueprint Infrastructure as Code (IaC) modular untuk deploy cluster Kubernetes multi-cloud (AWS EKS & GCP GKE) lengkap dengan auto-scaling, ingress controller, dan cert-manager.",
-      en: "Modular Infrastructure as Code (IaC) blueprint for deploying multi-cloud Kubernetes clusters with auto-scaling, ingress controllers, and SSL cert-manager."
+      id: "Rancang bangun ekosistem sistem informasi perusahaan terpadu yang menghubungkan sistem manajemen produksi, keuangan, keamanan (security), pemasaran (marketing), dan operasional yayasan secara terpusat.",
+      en: "End-to-end design and engineering of an integrated enterprise system connecting production management, finance, security, marketing, and foundation operations."
     },
     architecture: {
-      id: "Terraform HCL modules, ArgoCD GitOps sync, Helm charts, dan GitHub Actions automation.",
-      en: "Terraform HCL modules, ArgoCD GitOps synchronizer, Helm charts, and GitHub Actions automation."
+      id: "Arsitektur multi-divisi modular dengan integrasi database terpusat, kontrol hak akses berbasis peran (RBAC), dan pemantauan server berkala.",
+      en: "Modular cross-divisional architecture with centralized database integration, role-based access control (RBAC), and continuous server monitoring."
     },
-    category: "Systems & DevOps",
-    tags: ["Kubernetes", "Terraform", "AWS EKS", "ArgoCD", "Docker", "Helm", "GitHub Actions"],
-    metrics: ["90% Infra Setup Time Reduction", "Multi-AZ Resilience", "Cost Optimized"],
-    githubUrl: "https://github.com/rianpratama/nexusops-iac",
-    demoUrl: "https://nexusops-docs.dev",
+    category: "Backend & Cloud",
+    tags: ["Enterprise System", "Sistem Produksi", "Sistem Keuangan", "Server Maintenance", "Database Security"],
+    metrics: ["Lintas 5+ Divisi Perusahaan", "High Availability 99.9%", "Alur Kerja Terintegrasi"],
+    githubUrl: "https://github.com",
     featured: false,
     keyFeatures: {
       id: [
-        "Auto-scaling worker node berbasis Kubernetes Karpenter",
-        "Implementasi Zero-Trust network policy dengan Calico",
-        "Automasi rotasi TLS certificates menggunakan Let's Encrypt",
-        "Cost-optimization analyzer untuk mendeteksi resource idle"
+        "Modul manajemen operasional produksi & pencatatan keuangan akurat",
+        "Sistem keamanan akses data dan verifikasi otentikasi pengguna",
+        "Dukungan operasional terintegrasi untuk divisi pemasaran dan yayasan",
+        "Pemeliharaan infrastruktur server lokal maupun publik dengan stabilitas tinggi"
       ],
       en: [
-        "Auto-scaling worker nodes powered by Kubernetes Karpenter",
-        "Zero-Trust network security policy with Calico",
-        "Automated TLS certificate rotation via Let's Encrypt",
-        "Cost-optimization analyzer identifying idle cluster resources"
+        "Operational production management & precise financial bookkeeping modules",
+        "Data security protocols and multi-factor user authentication verification",
+        "Integrated operational modules for marketing division and foundation activities",
+        "High-stability maintenance of local and public server environments"
       ]
     }
   },
   {
-    id: "cacheforge-db",
-    title: "CacheForge InMemory Store",
+    id: "alluvia-maintenance",
+    title: "Alluvia Web System & Server Ops",
     tagline: {
-      id: "In-memory key-value database ringan dengan protokol RESP kompatibel Redis",
-      en: "Lightweight in-memory key-value store with RESP protocol compatible with Redis"
+      id: "Rancang bangun sistem informasi web end-to-end & manajemen keandalan server",
+      en: "End-to-end web information system architecture & server reliability operations"
     },
     description: {
-      id: "Implementasi database in-memory cepat yang mendukung struktur data string, hash, set, dan TTL expiration berbasis algoritma SkipList dan lock-free concurrency.",
-      en: "Fast in-memory database implementation supporting strings, hashes, sets, and TTL expiration built with SkipList and lock-free concurrency."
+      id: "Pengembangan sistem informasi web menyeluruh untuk operasional perusahaan, dibarengi dengan pemeliharaan server berkala, penataan basis data, dan optimasi performa berkelanjutan.",
+      en: "Comprehensive web information system development supporting enterprise operations alongside periodic server maintenance, database hygiene, and ongoing optimization."
     },
     architecture: {
-      id: "Dibangun dengan Golang, network polling non-blocking epoll/kqueue, dan snapshot AOF persistence ke disk.",
-      en: "Written in Golang with non-blocking epoll/kqueue network poller and append-only file (AOF) disk persistence."
+      id: "Sistem arsitektur web terintegrasi dengan pemeliharaan database rutin, prosedur backup berkala, dan pemantauan uptime server aktif.",
+      en: "Integrated web architecture featuring routine database maintenance, scheduled backups, and active server uptime monitoring."
     },
     category: "Systems & DevOps",
-    tags: ["Go (Golang)", "Concurrency", "Network Programming", "Data Structures", "TCP Sockets"],
-    metrics: ["85,000+ QPS", "Lock-free Read", "RESP v2 Compliant"],
-    githubUrl: "https://github.com/rianpratama/cacheforge",
-    demoUrl: "https://cacheforge-benchmark.dev",
+    tags: ["Server Maintenance", "Database Tuning", "System Architecture", "Troubleshooting", "Data Integrity"],
+    metrics: ["Integritas Basis Data 100%", "Stabilitas Server Maksimal", "Optimasi Rutin Berkala"],
+    githubUrl: "https://github.com",
     featured: false,
     keyFeatures: {
       id: [
-        "Kompatibel langsung dengan client library Redis (redis-cli)",
-        "Dukungan sliding TTL expiration & LRU eviction policy",
-        "Snapshot background persistence (RDB-style & AOF)",
-        "Zero external dependencies"
+        "Rancang arsitektur sistem informasi web dari perancangan hingga implementasi",
+        "Pemeliharaan dan optimasi server untuk memastikan keandalan tinggi",
+        "Manajemen dan pengamanan basis data server untuk menjaga integritas data",
+        "Troubleshooting cepat untuk mencegah kendala operasional"
       ],
       en: [
-        "Drop-in compatible with standard Redis clients (redis-cli)",
-        "Sliding TTL expiration & LRU cache eviction policy",
-        "Background disk persistence (RDB-style & AOF)",
-        "Zero external runtime dependencies"
+        "End-to-end web information system delivery from architectural blueprint to rollout",
+        "Routine server maintenance and tuning ensuring maximum reliability",
+        "Database administration and security safeguarding corporate data integrity",
+        "Rapid technical troubleshooting preventing operational disruptions"
+      ]
+    }
+  },
+  {
+    id: "ml-data-pipeline",
+    title: "Data Processing & AI Model Integration",
+    tagline: {
+      id: "Pipeline pengolahan data skala besar & integrasi model Machine Learning",
+      en: "Large-scale data processing pipeline & Machine Learning model integration"
+    },
+    description: {
+      id: "Implementasi solusi pemrosesan data bervolume besar dan integrasi model Machine Learning/AI untuk analisis prediktif, ekstraksi data otomatis, dan optimasi efisiensi komputasi.",
+      en: "Implementation of high-volume data processing pipelines and Machine Learning/AI model integrations for predictive analysis, automated extraction, and computational efficiency."
+    },
+    architecture: {
+      id: "Pipeline data modular dengan preprocessing, feature extraction, inferensi model AI, dan penyajian hasil via RESTful API.",
+      en: "Modular data pipeline featuring preprocessing, feature extraction, AI model inference, and delivery via RESTful APIs."
+    },
+    category: "AI & Tools",
+    tags: ["Python", "Machine Learning", "Data Processing", "AI Optimization", "REST API"],
+    metrics: ["Data Processing Skala Besar", "Optimasi Model AI", "Pipeline Terautomasi"],
+    githubUrl: "https://github.com",
+    featured: false,
+    keyFeatures: {
+      id: [
+        "Pengolahan dan pembersihan dataset bervolume besar secara terstruktur",
+        "Integrasi inferensi model Machine Learning ke dalam ekosistem web aplikasi",
+        "Optimasi latensi inferensi model untuk respons cepat",
+        "Automasi validasi data untuk meminimalisir anomali input"
+      ],
+      en: [
+        "Structured processing and hygiene of high-volume datasets",
+        "Integration of Machine Learning model inference into web ecosystems",
+        "Inference latency optimization for prompt API responses",
+        "Automated data validation to eliminate input anomalies"
       ]
     }
   }
@@ -307,180 +305,195 @@ export const projectsData: Project[] = [
 
 export const experiencesData: Experience[] = [
   {
-    id: "exp-1",
-    role: "Senior Software Engineer / Tech Lead",
-    company: "FinScale Payments",
-    companyUrl: "https://finscale.example.com",
-    period: "2023 - Sekarang (Present)",
-    location: "Jakarta, Indonesia (Hybrid)",
+    id: "exp-88group",
+    role: "IT Programmer Staff",
+    company: "88 Group",
+    companyUrl: "https://88group.id",
+    period: "Januari 2026 – November 2026",
+    location: "Jember, Jawa Timur",
     type: "Full-time",
     description: {
-      id: "Memimpin tim rekayasa backend beranggotakan 6 engineer untuk mengelola arsitektur payment gateway dan penyelesaian rekonsiliasi transaksi lintas bank.",
-      en: "Leading a backend engineering squad of 6 engineers managing high-volume payment gateway pipelines and inter-bank transaction settlement."
+      id: "Merancang dan mengembangkan ekosistem aplikasi serta sistem informasi terintegrasi untuk mendukung kelancaran operasional harian lintas divisi perusahaan.",
+      en: "Designed and engineered an integrated application ecosystem and enterprise information system supporting daily operations across corporate divisions."
     },
     achievements: {
       id: [
-        "Merancang ulang payment pipeline dari arsitektur monolitik ke event-driven microservices (Go + Kafka), meningkatkan throughput sebesar 320%.",
-        "Memangkas latensi p99 transaksi pembayaran dari 450ms menjadi 68ms melalui caching layer Redis dan optimasi connection pooling PostgreSQL.",
-        "Mengurangi cloud infrastructure spending sebesar 35% di AWS dengan migrasi ke spot instances dan kontainerisasi EKS."
+        "Merancang dan mengembangkan ekosistem aplikasi serta sistem informasi terintegrasi untuk mendukung operasional lintas divisi: manajemen produksi, keuangan, keamanan (security), pemasaran (marketing), dan operasional yayasan.",
+        "Mengelola dan memelihara infrastruktur server lokal maupun publik secara menyeluruh guna memastikan seluruh layanan digital berjalan stabil, aman, dan memiliki performa optimal.",
+        "Menjaga ketersediaan sistem dan keandalan layanan (high availability) melalui pemantauan rutin serta optimasi teknis untuk mendukung kelancaran operasional harian perusahaan."
       ],
       en: [
-        "Re-architected payment processing from monolith to event-driven microservices (Go + Kafka), increasing system throughput by 320%.",
-        "Slashed payment p99 transaction latency from 450ms to 68ms using multi-tier Redis caching and PostgreSQL connection pooling tuning.",
-        "Reduced AWS cloud infrastructure spend by 35% by migrating workloads to spot instances and managed EKS clusters."
+        "Designed and built an integrated enterprise application ecosystem across cross-functional divisions: production management, finance, security, marketing, and foundation operations.",
+        "Managed and maintained both local and public server infrastructure comprehensively, ensuring digital services operate stably, securely, and with optimal performance.",
+        "Maintained high availability and service reliability through routine monitoring and technical optimizations supporting seamless daily business operations."
       ]
     },
-    techStack: ["Go (Golang)", "PostgreSQL", "Kafka", "Docker", "Kubernetes", "AWS", "Redis", "gRPC"]
+    techStack: ["Web Development", "Database Management", "Server Infrastructure", "System Security", "Troubleshooting", "High Availability"]
   },
   {
-    id: "exp-2",
-    role: "Full-Stack Software Engineer",
-    company: "CloudCore SaaS Platform",
-    companyUrl: "https://cloudcore.example.com",
-    period: "2021 - 2023",
-    location: "Remote",
-    type: "Full-time",
+    id: "exp-alluvia",
+    role: "Remote Maintenance",
+    company: "Alluvia",
+    companyUrl: "https://alluvia.co.id",
+    period: "Oktober 2024 – November 2026",
+    location: "Jember, Jawa Timur",
+    type: "Remote / Contract",
     description: {
-      id: "Mengembangkan fitur-fitur analitik B2B, automasi webhook, dan portal dashboard interaktif yang digunakan oleh lebih dari 50.000 pengguna aktif bulanan.",
-      en: "Engineered B2B analytics features, webhook automation pipelines, and interactive dashboard portals used by 50,000+ monthly active users."
+      id: "Bertanggung jawab atas arsitektur sistem informasi web end-to-end, pemeliharaan server berkala, dan penataan keamanan basis data perusahaan.",
+      en: "Responsible for end-to-end web information system architecture, routine server maintenance, and enterprise database security."
     },
     achievements: {
       id: [
-        "Membangun dashboard analitik real-time menggunakan React, TypeScript, dan WebSocket dengan 60fps chart rendering.",
-        "Mengimplementasikan sistem OAuth2, RBAC granular, dan multi-tenant schema isolation untuk pelanggan enterprise tier.",
-        "Meningkatkan test coverage frontend dan backend dari 45% menjadi 88%, mengurangi rollback deployment sebesar 80%."
+        "Merancang dan membangun sistem informasi berbasis web secara menyeluruh (end-to-end), mulai dari tahap perancangan arsitektur hingga implementasi untuk mendukung operasional perusahaan.",
+        "Melakukan pemeliharaan (maintenance) dan optimasi sistem secara berkala guna memastikan layanan server berjalan stabil, optimal, dan memiliki keandalan tinggi.",
+        "Mengelola, menata, dan mengamankan basis data server melalui prosedur pemeliharaan rutin untuk menjaga integritas data serta efisiensi alur kerja perusahaan."
       ],
       en: [
-        "Engineered real-time analytics dashboard with React, TypeScript, and WebSockets delivering smooth 60fps chart rendering.",
-        "Implemented robust OAuth2, granular RBAC, and multi-tenant schema isolation for enterprise tier customers.",
-        "Elevated test coverage across frontend and backend from 45% to 88%, cutting production rollback incidents by 80%."
+        "Engineered end-to-end web-based information systems from architectural design through implementation to empower company operations.",
+        "Conducted regular system maintenance and performance optimizations to ensure server services remain stable, efficient, and highly dependable.",
+        "Administered, organized, and secured server databases through routine maintenance protocols to preserve data integrity and operational workflow efficiency."
       ]
     },
-    techStack: ["TypeScript", "React", "Node.js", "NestJS", "PostgreSQL", "Tailwind CSS", "Jest", "Docker"]
+    techStack: ["System Architecture", "Web Information Systems", "Database Administration", "Server Maintenance", "Data Integrity"]
   },
   {
-    id: "exp-3",
-    role: "Backend Developer",
-    company: "Nexa Digital Studio",
-    companyUrl: "https://nexastudio.example.com",
-    period: "2019 - 2021",
-    location: "Bandung, Indonesia",
+    id: "exp-esolusindo",
+    role: "Full-stack Developer",
+    company: "ESOLUSINDO",
+    companyUrl: "https://esolusindo.com",
+    period: "Agustus 2023 – Januari 2024",
+    location: "Jember, Jawa Timur",
     type: "Full-time",
     description: {
-      id: "Membangun RESTful API, integrasi payment gateway pihak ketiga, dan manajemen database untuk puluhan klien skala menengah hingga startup.",
-      en: "Built robust RESTful APIs, third-party payment integrations, and database schemas for diverse startup and SME clients."
+      id: "Mengembangkan berbagai solusi aplikasi digital berbasis web dan mobile untuk klien perusahaan ritel, kesehatan, dan instansi pemerintahan.",
+      en: "Developed diverse web and mobile digital solutions for retail enterprises, healthcare platforms, and regional government institutions."
     },
     achievements: {
       id: [
-        "Mengirimkan lebih dari 15 proyek web dan API tepat waktu dengan zero-downtime database migrations.",
-        "Mengotomasi pipeline CI/CD menggunakan GitHub Actions dan Docker untuk staging dan production deployment.",
-        "Mementori 4 junior developer dalam best practice Git, code review, dan penulisan unit test."
+        "Mengembangkan aplikasi Belankon Kurir, sebuah solusi digital untuk mengoptimalkan operasional logistik dan pelacakan pengiriman barang secara efisien bagi kurir toko.",
+        "Merancang dan membangun aplikasi ISI-Piringku, platform pemantauan kesehatan yang memfasilitasi pengguna dalam mencatat serta mengevaluasi asupan gizi harian secara terstruktur.",
+        "Membangun situs web Jaringan Dokumentasi dan Informasi Hukum (JDIH) Kabupaten Jember sebagai pusat penyimpanan, pengelolaan, dan pengarsipan dokumen hukum serta administrasi publik.",
+        "Mengelola siklus pengembangan proyek secara menyeluruh mulai dari analisis kebutuhan hingga implementasi, guna menghadirkan solusi digital yang fungsional dan berdampak langsung bagi pengguna."
       ],
       en: [
-        "Delivered over 15 client web and API projects on schedule with zero-downtime database migrations.",
-        "Automated CI/CD pipelines via GitHub Actions and Docker containers for staging and production environments.",
-        "Mentored 4 junior developers in Git workflows, constructive code reviews, and unit test authoring."
+        "Developed Belankon Kurir mobile application, optimizing store logistics and real-time delivery tracking for retail couriers.",
+        "Architected and built ISI-Piringku, a structured health platform enabling users to track and evaluate daily nutritional intake.",
+        "Engineered the official Legal Documentation and Information Network (JDIH) web portal for Jember Regency to archive and manage public legal documents.",
+        "Managed end-to-end project lifecycles from requirement analysis through deployment, delivering impactful digital solutions for end-users."
       ]
     },
-    techStack: ["Node.js", "Express", "TypeScript", "MySQL", "MongoDB", "Redis", "Git", "Linux"]
+    techStack: ["Full-stack Web", "Mobile App Development", "MySQL", "REST API", "SDLC Management", "UI/UX"]
+  }
+];
+
+export const educationData: Education[] = [
+  {
+    id: "edu-polije",
+    major: "D4 Teknik Informatika (Teknologi Informasi)",
+    institution: "Politeknik Negeri Jember",
+    period: "Agustus 2020 – Agustus 2024",
+    location: "Jember, Jawa Timur",
+    description: {
+      id: "Fokus studi pada rekayasa perangkat lunak, arsitektur basis data relasional & non-relasional, pengembangan web & mobile, pengolahan data, dan Machine Learning.",
+      en: "Focused on software engineering, relational & non-relational database architectures, web & mobile development, large-scale data processing, and Machine Learning."
+    }
+  },
+  {
+    id: "edu-man1",
+    major: "Matematika dan Ilmu Pengetahuan Alam (MIPA)",
+    institution: "Madrasah Aliyah Negeri 1 Jember",
+    period: "Agustus 2017 – Agustus 2020",
+    location: "Jember, Jawa Timur",
+    description: {
+      id: "Membangun fondasi logika berpikir kritis, pemodelan matematis, dan pemecahan masalah algoritmis.",
+      en: "Built a solid foundation in analytical thinking, mathematical modeling, and algorithmic problem-solving."
+    }
   }
 ];
 
 export const skillCategoriesData: SkillCategory[] = [
   {
-    title: { id: "Bahasa Pemrograman", en: "Programming Languages" },
-    iconName: "FileCode2",
-    skills: [
-      { name: "TypeScript / JavaScript", level: 95, experience: "5+ tahun", highlight: "Strict typing, Async/Concurrency, Modern ESNext" },
-      { name: "Go (Golang)", level: 90, experience: "4+ tahun", highlight: "Goroutines, Channels, Microservices, gRPC" },
-      { name: "SQL", level: 90, experience: "5+ tahun", highlight: "Complex Queries, Indexing, Query Optimization, Locks" },
-      { name: "Python", level: 82, experience: "3+ tahun", highlight: "Automation, FastApi, Data Processing, LLM Agents" },
-      { name: "Rust", level: 68, experience: "1.5 tahun", highlight: "Memory Safety, CLI Tools, Systems Exploration" }
-    ]
-  },
-  {
-    title: { id: "Backend & Arsitektur Sistem", en: "Backend & Systems Architecture" },
-    iconName: "Server",
-    skills: [
-      { name: "Microservices & Distributed Systems", level: 92, experience: "4+ tahun", highlight: "Event-driven, SAGA Pattern, Outbox Pattern" },
-      { name: "RESTful & gRPC APIs", level: 95, experience: "5+ tahun", highlight: "Protocol Buffers, API Versioning, Rate Limiting" },
-      { name: "Kafka & Message Queues", level: 88, experience: "3+ tahun", highlight: "Partitions, Consumer Groups, DLQ, RabbitMQ" },
-      { name: "Node.js & NestJS", level: 92, experience: "5+ tahun", highlight: "Dependency Injection, Middleware, TypeORM/Prisma" },
-      { name: "GraphQL", level: 80, experience: "2+ tahun", highlight: "Schema Design, Resolvers, Dataloaders" }
-    ]
-  },
-  {
-    title: { id: "Frontend & Antarmuka Web", en: "Frontend & Web UI" },
+    title: { id: "Pengembangan Web & Mobile", en: "Web & Mobile Development" },
     iconName: "Layout",
     skills: [
-      { name: "React 19 & Next.js", level: 94, experience: "5+ tahun", highlight: "Server Components, Custom Hooks, Performance tuning" },
-      { name: "Tailwind CSS & Modern UI", level: 95, experience: "4+ tahun", highlight: "Responsive Design, Glassmorphism, Design Systems" },
-      { name: "State Management", level: 90, experience: "5+ tahun", highlight: "Zustand, TanStack Query (React Query), Redux" },
-      { name: "WebSockets & Realtime", level: 88, experience: "3+ tahun", highlight: "Socket.io, SSE, Reconnection Handlers, STOMP" },
-      { name: "Web Performance & Core Web Vitals", level: 86, experience: "4+ tahun", highlight: "Lazy Loading, Asset Bundling, Lighthouse 95+" }
+      { name: "Web Development (Frontend & Backend)", level: 95, experience: "3+ tahun", highlight: "End-to-end SDLC, Responsive UI, Clean Code" },
+      { name: "Mobile Application Development", level: 88, experience: "2+ tahun", highlight: "Logistik Kurir, Health Tracker Apps, Tracking GPS" },
+      { name: "RESTful APIs & Web Technologies", level: 92, experience: "3+ tahun", highlight: "API Design, Endpoint Security, JSON Integration" },
+      { name: "UI/UX & Frontend Implementation", level: 90, experience: "3+ tahun", highlight: "Modern Responsive Layouts, User Flow, Accessibility" }
     ]
   },
   {
-    title: { id: "Cloud, DevOps & Database", en: "Cloud, DevOps & Databases" },
+    title: { id: "Basis Data & Infrastruktur Server", en: "Databases & Server Infrastructure" },
+    iconName: "Server",
+    skills: [
+      { name: "Manajemen Basis Data (Database Management)", level: 94, experience: "3+ tahun", highlight: "MySQL, Relational Schema, Data Integrity, Optimasi Query" },
+      { name: "Server Maintenance & Monitoring", level: 92, experience: "2+ tahun", highlight: "Infrastruktur Server Lokal & Publik, Uptime, Logging" },
+      { name: "High Availability & System Reliability", level: 90, experience: "2+ tahun", highlight: "Pemantauan Rutin, Redundancy, Fail-safe Ops" },
+      { name: "Security & Access Control", level: 86, experience: "2+ tahun", highlight: "Sistem Keamanan Akses, RBAC, Prosedur Pemeliharaan Rutin" }
+    ]
+  },
+  {
+    title: { id: "Pengolahan Data & Machine Learning", en: "Data Processing & Machine Learning" },
+    iconName: "FileCode2",
+    skills: [
+      { name: "Pengolahan Data Skala Besar (Data Processing)", level: 90, experience: "2+ tahun", highlight: "Data Pipeline, Preprocessing, Validasi & Transformasi" },
+      { name: "Integrasi Machine Learning & Model AI", level: 85, experience: "2+ tahun", highlight: "Model Inference, Model Optimization, Smart System Solutions" },
+      { name: "Pemecahan Masalah Teknis (Troubleshooting)", level: 95, experience: "3+ tahun", highlight: "Root-cause Analysis, Debugging, Quick Issue Resolution" },
+      { name: "Web Technologies Programming", level: 92, experience: "3+ tahun", highlight: "Modern Programming Languages, Frameworks, Architecture" }
+    ]
+  },
+  {
+    title: { id: "Kolaborasi & Manajemen Proyek", en: "Collaboration & Delivery" },
     iconName: "Cloud",
     skills: [
-      { name: "Docker & Containerization", level: 94, experience: "5+ tahun", highlight: "Multi-stage builds, Alpine optimizations, Compose" },
-      { name: "Kubernetes & IaC", level: 84, experience: "3+ tahun", highlight: "EKS, Pod autoscaling, Ingress, Terraform" },
-      { name: "PostgreSQL & MySQL", level: 92, experience: "5+ tahun", highlight: "Partitioning, Replication, Tuning EXPLAIN ANALYZE" },
-      { name: "Redis Caching & Streams", level: 92, experience: "4+ tahun", highlight: "Distributed Locking, Pub/Sub, Cluster Mode" },
-      { name: "CI/CD & Observability", level: 90, experience: "4+ tahun", highlight: "GitHub Actions, Prometheus, Grafana, OpenTelemetry" }
+      { name: "Team Coordination & Cross-Functional", level: 94, experience: "3+ tahun", highlight: "Kolaborasi Tim Lintas Divisi, Alur Komunikasi Efektif" },
+      { name: "Problem Solving & Analytical Thinking", level: 95, experience: "3+ tahun", highlight: "Penerjemahan Kebutuhan Bisnis ke Solusi Teknis" },
+      { name: "Siklus Proyek Menyeluruh (End-to-End)", level: 92, experience: "3+ tahun", highlight: "Analisis Kebutuhan, Perancangan, Testing, Implementasi" },
+      { name: "Microsoft Office & Dokumentasi Teknis", level: 90, experience: "4+ tahun", highlight: "Pelaporan Teknis, Dokumentasi Sistem, Presentasi" }
     ]
   }
 ];
 
 export const certificationsData: Certification[] = [
   {
-    id: "cert-1",
-    title: "AWS Certified Solutions Architect – Associate",
-    issuer: "Amazon Web Services (AWS)",
+    id: "cert-bnsp",
+    title: "Web Developer",
+    issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
     issueDate: "2024",
-    credentialId: "AWS-SAA-839210",
-    credentialUrl: "https://aws.amazon.com/verification"
+    credentialId: "BNSP-WD-2024",
+    credentialUrl: "https://bnsp.go.id"
   },
   {
-    id: "cert-2",
-    title: "Certified Kubernetes Administrator (CKA)",
-    issuer: "Cloud Native Computing Foundation (CNCF)",
-    issueDate: "2023",
-    credentialId: "CKA-402918",
-    credentialUrl: "https://www.cncf.io/certification/cka/"
-  },
-  {
-    id: "cert-3",
-    title: "Meta Certified Front-End Developer Professional",
-    issuer: "Meta (Coursera)",
-    issueDate: "2022",
-    credentialId: "META-FED-9912",
-    credentialUrl: "https://coursera.org"
+    id: "cert-office",
+    title: "Microsoft Offices Certified",
+    issuer: "Politeknik Negeri Jember",
+    issueDate: "2024",
+    credentialId: "POLIJE-MOS-2024",
+    credentialUrl: "https://polije.ac.id"
   }
 ];
 
 export const testimonialsData: Testimonial[] = [
   {
     id: "test-1",
-    name: "Hendra Wijaya",
-    role: "VP of Engineering",
-    company: "FinScale Payments",
+    name: "Engineering Lead",
+    role: "Operational Technology",
+    company: "88 Group",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
     content: {
-      id: "Rian adalah software engineer teladan. Kemampuannya mengubah requirement bisnis yang rumit menjadi arsitektur microservices yang bersih dan teruji sungguh mengesankan. Kinerjanya selalu melebihi ekspektasi.",
-      en: "Rian is an exemplary software engineer. His ability to distill complex financial requirements into clean, resilient microservice architectures is exceptional. Always delivers well above expectations."
+      id: "Fasta memiliki kemampuan teknis yang sangat solid, baik dalam membangun ekosistem aplikasi lintas divisi maupun mengelola infrastruktur server dengan reliabilitas tinggi. Solutif dalam pemecahan masalah.",
+      en: "Fasta possesses solid technical acumen across cross-divisional application development and server infrastructure maintenance with high reliability. Exceptional problem-solving skills."
     }
   },
   {
     id: "test-2",
-    name: "Sarah Jenkins",
-    role: "Lead Product Architect",
-    company: "CloudCore Global",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80",
+    name: "Project Manager",
+    role: "Digital Solutions",
+    company: "ESOLUSINDO",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
     content: {
-      id: "Kolaborasi bersama Rian selalu menyenangkan. Dia tidak hanya memikirkan kode backend yang cepat, tapi juga sangat peduli dengan UX frontend dan kemudahan pemeliharaan kode oleh anggota tim lainnya.",
-      en: "Working alongside Rian is a privilege. He cares deeply not only about backend performance, but also about delightful frontend UX and ergonomic code maintainability for the entire engineering squad."
+      id: "Dalam pengembangan Belankon Kurir dan portal JDIH Jember, Fasta menunjukkan dedikasi penuh mengawal siklus proyek dari analisis hingga implementasi produksi dengan hasil yang sangat rapi dan tepat waktu.",
+      en: "Throughout the development of Belankon Kurir and JDIH Jember, Fasta demonstrated outstanding dedication managing end-to-end SDLC from requirement analysis to production delivery."
     }
   }
 ];
