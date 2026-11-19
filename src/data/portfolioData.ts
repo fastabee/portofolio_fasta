@@ -24,7 +24,7 @@ export const personalData: PersonalInfo = {
   philosophies: [
     {
       title: { id: "Arsitektur End-to-End & Terukur", en: "End-to-End & Scalable Architecture" },
-      desc: { 
+      desc: {
         id: "Merancang dan membangun sistem perangkat lunak secara menyeluruh, mulai dari perancangan skema basis data, backend API, antarmuka pengguna, hingga infrastruktur server yang handal.",
         en: "Designing and engineering software systems comprehensively from database schemas and backend APIs to responsive frontends and resilient server infrastructure."
       },
@@ -32,7 +32,7 @@ export const personalData: PersonalInfo = {
     },
     {
       title: { id: "Manajemen & Keamanan Basis Data", en: "Database Management & Security" },
-      desc: { 
+      desc: {
         id: "Mengelola, menata, dan mengamankan basis data server melalui prosedur pemeliharaan rutin guna menjaga integritas data perusahaan dan efisiensi query.",
         en: "Managing, organizing, and securing server databases through systematic maintenance routines to preserve data integrity and peak query efficiency."
       },
@@ -40,7 +40,7 @@ export const personalData: PersonalInfo = {
     },
     {
       title: { id: "High Availability & Troubleshooting", en: "High Availability & Troubleshooting" },
-      desc: { 
+      desc: {
         id: "Menjaga ketersediaan sistem dan layanan server lokal maupun publik tetap stabil, aman, dan memiliki performa optimal dengan respon cepat terhadap kendala teknis.",
         en: "Ensuring high availability across local and public server infrastructure, maintaining optimal stability and rapid resolution of technical issues."
       },
@@ -48,7 +48,7 @@ export const personalData: PersonalInfo = {
     },
     {
       title: { id: "Integrasi AI & Data Processing", en: "AI Integration & Data Processing" },
-      desc: { 
+      desc: {
         id: "Mengolah data skala besar (data processing) serta mengintegrasikan dan mengoptimasi model Machine Learning/AI untuk menghasilkan solusi cerdas berdampak nyata.",
         en: "Processing large-scale datasets while integrating and optimizing Machine Learning/AI models into production applications for tangible real-world impact."
       },
