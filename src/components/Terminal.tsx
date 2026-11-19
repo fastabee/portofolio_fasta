@@ -67,7 +67,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300">
               <div><span className="text-emerald-400 font-mono font-bold">about</span> - Software engineer bio & background</div>
               <div><span className="text-emerald-400 font-mono font-bold">skills</span> - Technical capabilities & proficiencies</div>
-              <div><span className="text-emerald-400 font-mono font-bold">projects</span> - Production projects (Belankon, JDIH, etc.)</div>
+              <div><span className="text-emerald-400 font-mono font-bold">projects</span> - Production projects (Kacamatamu, Belankon, JDIH)</div>
               <div><span className="text-emerald-400 font-mono font-bold">experience</span> - Career timeline (88 Group, Alluvia, ESOLUSINDO)</div>
               <div><span className="text-emerald-400 font-mono font-bold">education</span> - Formal degree & alma mater</div>
               <div><span className="text-emerald-400 font-mono font-bold">contact</span> - Email, phone, WA & LinkedIn</div>
@@ -179,7 +179,7 @@ export const TerminalComponent: React.FC<TerminalProps> = ({
               <p>Degree: D4 Teknik Informatika, Politeknik Negeri Jember (2020-2024)</p>
               <p>Certification: BNSP Certified Web Developer (2024)</p>
               <p>Experience: 88 Group (IT Programmer), Alluvia (Remote Maintenance), ESOLUSINDO (Full-stack)</p>
-              <p>Key Projects: Belankon Kurir, ISI-Piringku, JDIH Kab. Jember, Enterprise System</p>
+              <p>Key Projects: Kacamatamu Jember, Belankon Kurir, ISI-Piringku, JDIH Kab. Jember</p>
               <p>Email: {personalData.email} | Phone: {personalData.phone}</p>
             </div>
           );

@@ -26,10 +26,10 @@ export const fastaBiqulHoirot: SoftwareEngineer = {
   ],
 
   recentProjects: [
+    'Kacamatamu Jember (Sistem Pemeriksaan & Pemasaran)',
     'Belankon Kurir (Logistik & Pelacakan Real-Time)',
     'ISI-Piringku (Platform Pemantauan Gizi Harian)',
-    'JDIH Kabupaten Jember (Pusat Arsip Hukum Resmi)',
-    'Ekosistem Aplikasi Terintegrasi (88 Group)'
+    'JDIH Kabupaten Jember (Pusat Arsip Hukum Resmi)'
   ],
 
   solveProblem(requirement: BusinessRequirement): ScalableSolution {
@@ -109,8 +109,8 @@ class SoftwareEngineer:
                 </p>
                 <p className="text-slate-400 text-sm">
                   {lang === 'id'
-                    ? 'Memiliki pengalaman langsung baik di lingkungan korporasi maupun freelance dalam mengembangkan aplikasi Belankon Kurir, platform kesehatan ISI-Piringku, web portal resmi JDIH Kabupaten Jember, hingga ekosistem sistem informasi terintegrasi lintas divisi di 88 Group.'
-                    : 'Proven hands-on experience in corporate and freelance settings delivering Belankon Kurir, ISI-Piringku health tracker, the official JDIH Jember legal portal, and integrated enterprise systems at 88 Group.'}
+                    ? 'Memiliki pengalaman langsung baik di lingkungan korporasi maupun freelance dalam mengembangkan aplikasi Kacamatamu Jember (pemeriksaan & pemasaran optik), Belankon Kurir, platform kesehatan ISI-Piringku, web portal resmi JDIH Kabupaten Jember, hingga ekosistem sistem informasi terintegrasi lintas divisi di 88 Group.'
+                    : 'Proven hands-on experience in corporate and freelance settings delivering Kacamatamu Jember optical exam & marketing platform, Belankon Kurir, ISI-Piringku health tracker, the official JDIH Jember legal portal, and integrated enterprise systems at 88 Group.'}
                 </p>
               </div>
 

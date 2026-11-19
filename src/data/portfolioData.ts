@@ -89,6 +89,42 @@ export const personalData: PersonalInfo = {
 
 export const projectsData: Project[] = [
   {
+    id: "kacamatamu-jember",
+    title: "Kacamatamu Eyewear System",
+    tagline: {
+      id: "Aplikasi toko kacamata: pemeriksaan refraksi mata, manajemen resep, dan etalase pemasaran",
+      en: "Optical store management platform: refraction eye exam records, prescription history, and marketing catalog"
+    },
+    description: {
+      id: "Aplikasi terintegrasi untuk toko kacamata Kacamatamu Eyewear Jember yang memfasilitasi pencatatan data pemeriksaan refraksi mata pelanggan (visus, spheris, silinder, axis, PD), manajemen riwayat resep lensa, serta katalog pemasaran frame dan kacamata secara online.",
+      en: "Integrated optical management platform for Kacamatamu Eyewear Jember, streamlining customer refraction eye examinations (SPH, CYL, AXIS, PD), prescription history tracking, and digital eyewear catalog marketing."
+    },
+    architecture: {
+      id: "Arsitektur web client-server dengan basis data relasional untuk pencatatan rekam refraksi presisi, manajemen katalog inventaris frame, dan integrasi modul transaksi pemesanan.",
+      en: "Client-server web architecture with relational database schemas for precision refraction logging, frame inventory cataloging, and sales order processing."
+    },
+    category: "Full-Stack",
+    tags: ["Web Development", "Database Management", "Sistem Optik", "Pemeriksaan Refraksi", "Katalog Pemasaran", "REST API"],
+    metrics: ["Pemeriksaan Refraksi Terstruktur", "Katalog Pemasaran Online", "Riwayat Resep Terintegrasi"],
+    githubUrl: "https://github.com",
+    demoUrl: "https://kacamatamu-jember.com/",
+    featured: true,
+    keyFeatures: {
+      id: [
+        "Pencatatan data pemeriksaan refraksi mata (Spheris, Silinder, Axis, Addisi, Pupillary Distance / PD)",
+        "Penyimpanan riwayat resep kacamata pelanggan untuk kemudahan kontrol dan repeat order",
+        "Katalog produk dan pemasaran frame serta lensa kacamata terintegrasi",
+        "Laporan transaksi dan nota pemesanan kacamata otomatis untuk operasional toko"
+      ],
+      en: [
+        "Digital refraction examination logging (Sphere, Cylinder, Axis, Addition, Pupillary Distance / PD)",
+        "Customer optical prescription history tracking for seamless follow-ups and repeat orders",
+        "Integrated online product showcase and marketing catalog for frames and lenses",
+        "Automated optical sales order invoice generation and store operational reporting"
+      ]
+    }
+  },
+  {
     id: "belankon-kurir",
     title: "Belankon Kurir",
     tagline: {
